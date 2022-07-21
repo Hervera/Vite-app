@@ -1,0 +1,17 @@
+name: coral-app
+region: nyc
+services:
+- build_command: yarn build
+  environment_slug: node-js
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: Hervera/vite-app
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: vite-app
+  routes:
+  - path: /
+  run_command: yarn run dev
+  source_dir: /

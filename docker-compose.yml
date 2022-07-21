@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pindo-marketing-site:
+    container_name: pindo_site
+    image: pindo_site
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - '8080:8080'

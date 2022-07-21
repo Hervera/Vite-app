@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pindo-marketing-site:
+    container_name: pindo_site-dev
+    image: pindo_site-dev
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - ./:/app
+    command: yarn dev
+    ports:
+      - '3000:3000'
